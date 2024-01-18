@@ -1,9 +1,13 @@
 import { useState } from "react"
 
-export function Card({ userName, name, isFollowing }) {
+export function Card({ userName, name }) {
+    const [isFollowing, setIsFollowing] = useState(false)
     const text = isFollowing ? 'Siguiendo' : 'Seguir'
     const buttonClaseName = isFollowing ? 'tw-followCard-button is-following' : 'tw-followCard-button'
 
+    const handleClick = () => {
+        setIsFollowing(!isFollowing)
+    }
 
     return (
         <article className='tw-followCard'>
@@ -16,7 +20,7 @@ export function Card({ userName, name, isFollowing }) {
             </header>
 
             <aside>
-                <button className={buttonClaseName}>
+                <button className={buttonClaseName} onClick={handleClick}>
                     {text}
                 </button>
             </aside>
