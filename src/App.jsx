@@ -5,7 +5,9 @@ const App = () => {
   return (
     <div className='App'>
       <Card userName={'ptztdev'} name={"Tomas Millan"} />
-      <Card userName={'midudev'} name={"Miguel Angel Duran"} />
+      <Card userName={'midudev'} name={"Miguel Ángel Durán"} />
+      <Card userName={'EvilAFM'} name={"Alexelcapo"} />
+      <Card userName={'betzerra'} name={"Ezequiel"} />
     </div>
 
   )
