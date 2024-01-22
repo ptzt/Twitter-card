@@ -1,7 +1,7 @@
 import { useState } from "react"
 
-export function Card({ userName, name }) {
-    const [isFollowing, setIsFollowing] = useState(false)
+export function Card({ userName, name, initialIsFollowing }) {
+    const [isFollowing, setIsFollowing] = useState(initialIsFollowing)
     const text = isFollowing ? 'Siguiendo' : 'Seguir'
     const buttonClaseName = isFollowing ? 'tw-followCard-button is-following' : 'tw-followCard-button'
 
@@ -21,7 +21,8 @@ export function Card({ userName, name }) {
 
             <aside>
                 <button className={buttonClaseName} onClick={handleClick}>
-                    {text}
+                    <span className="tw-followCard-text">{text}</span>
+                    <span className="tw-followCard-stopFollow">Dejar de seguir</span>
                 </button>
             </aside>
         </article>
